@@ -1,0 +1,315 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 540px;
+  min-width: 320px;
+  margin: 0 auto;
+  font: normal 14px/1.5 Tahoma, "Lucida Grande", Verdana, "Microsoft Yahei", STXihei, hei;
+  color: #000;
+  background: #f2f2f2;
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+  /* height: 1000px; */
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  width: 100%;
+  max-width: 540px;
+  min-width: 320px;
+  height: 44px;
+  padding-left: 12px;
+  z-index: 10;
+  /* background-color: tomato; */
+}
+
+.search-user {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+}
+
+.search-user span {
+  line-height: 1;
+  font-size: 12px;
+  color: #fff;
+}
+
+.search-user span::before {
+  content: "";
+  display: block;
+  width: 22px;
+  height: 22px;
+  background: url(../images/home-common-sprite2x@v7.15.png) no-repeat 1px -36px;
+  background-size: 21px auto;
+  margin-left: 2px;
+}
+
+.search-bar {
+  flex: 1;
+  position: relative;
+  height: 30px;
+  line-height: 28px;
+  border: 1px solid #666;
+  border-radius: 14px;
+  background-color: #fff;
+  color: #686868;
+}
+
+.search-bar span {
+  padding-left: 32px;
+}
+
+.search-bar span::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 6px;
+  /* 会获得宽高属性 */
+  width: 35px;
+  height: 28px;
+
+  background: url(../images/home-common-sprite2x@v7.15.png) no-repeat 0 0;
+  background-size: 21px auto;
+}
+
+.focus {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 60%;
+}
+
+.focus img {
+  position: absolute;
+  top: -20%;
+  z-index: -1;
+  width: 100%;
+  border-bottom-left-radius: 100% 20%;
+  border-bottom-right-radius: 100% 20%;
+}
+
+.local-nav {
+  display: flex;
+  justify-content: center;
+  height: 64px;
+  margin: -98px 12px 10px 12px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 8%);
+}
+
+.local-nav li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.local-nav li [class^=icon-local] {
+  width: 40px;
+  height: 40px;
+  background: url(../images/home-fivemain-sprite2x@v7.15.png) no-repeat 0 0;
+  background-size: 40px auto;
+}
+
+.local-nav li .icon-local-index2 {
+  background-position: 0px -40px;
+}
+
+.local-nav li .icon-local-index3 {
+  background-position: 0px -80px;
+}
+
+.local-nav li .icon-local-index4 {
+  background-position: 0px -120px;
+}
+
+.local-nav li .icon-local-index5 {
+  background-position: 0px -160px;
+}
+
+.local-nav li span:nth-child(2) {
+  font-size: 12px;
+  line-height: 12px;
+  color: #222;
+}
+
+/* 具体导航模块 */
+.nav {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  margin: 0 12px 10px 12px;
+  border-radius: 10px;
+}
+
+.nav [class^=sub] {
+  flex: 1;
+  display: flex;
+}
+
+.nav .sub1 {
+  background: -webkit-linear-gradient(left, #fa5a56, #fb8650)
+}
+
+.nav .sub2 {
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  background: -webkit-linear-gradient(left, #4c8fed, #54bced)
+}
+
+.nav .sub3 {
+  background: -webkit-linear-gradient(left, #37c2aa, #6bd558)
+}
+
+.nav div[class^=sub] {
+  display: flex;
+}
+
+.nav div[class^=sub] a[class$=middle] {
+  flex: 31%;
+}
+
+.nav div[class^=sub] a[class$=small] {
+  flex: 23%;
+}
+
+.nav div[class^=sub] a[class$=big] {
+  flex: 46%;
+}
+
+/* 给所有a添加一个左边白线 */
+.nav a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 1px solid #fff;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.nav span {
+  flex: 1;
+  text-align: center;
+  padding: 22px 0;
+}
+
+/* 每行第一个a要特殊处理 */
+.nav div[class^=sub] a:first-child{
+  border-left: none;
+  padding-left: 10px;
+  padding-right: 60px;
+}
+
+.nav-big {
+  background-color: #ffc24b;
+}
+/* 给特惠单独的背景色 */
+#nav-sale {
+  flex: 1;
+  color: #a05415;
+  background: url(../images/grid-nav-items-hot.png) no-repeat 0 0;
+  background-size: 100% 100%;
+}
+
+.nav .sub1 .nav-middle {
+  background: url(../images/grid-nav-items-hotel@v7.15.png) no-repeat bottom right;
+  background-size: 73px auto;
+}
+
+.nav .sub1 .nav-small {
+  background: url(../images/grid-nav-items-minsu@v7.15.png) no-repeat bottom left;
+  background-size: 37px auto;
+}
+
+
+/* 双行导航模块 */
+.double-nav {
+  display: flex;
+  flex-wrap: wrap;
+
+  margin: 0 12px;
+  border-radius: 10px;
+}
+
+.double-nav li {
+  flex: 20%;
+  display: flex;
+}
+
+.double-nav span {
+  font-size: 12px;
+  font-weight: 500;
+  color: #333;
+}
+
+.double-nav a {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.double-nav a span[class^=nav-icon] {
+  height: 28px;
+  width: 28px;
+  background: url(../images/un_ico_subnav2x@v7.33.png) no-repeat 0 0;
+  background-size: 28px auto;
+}
+
+.double-nav a span.nav-icon-index2 {
+  background-position: 0px -28px;
+}
+
+.double-nav a span.nav-icon-index3 {
+  background-position: 0px -56px;
+}
+
+.double-nav a span.nav-icon-index4 {
+  background-position: 0px -84px;
+}
+.double-nav a span.nav-icon-index5 {
+  background-position: 0px -112px;
+}
+.double-nav a span.nav-icon-index6 {
+  background-position: 0px -140px;
+}
+.double-nav a span.nav-icon-index7 {
+  background-position: 0px -168px;
+}
+.double-nav a span.nav-icon-index8 {
+  background-position: 0px -196px;
+}
+.double-nav a span.nav-icon-index9 {
+  background-position: 0px -224px;
+}
+.double-nav a span.nav-icon-index10 {
+  background-position: 0px -252px;
+}
